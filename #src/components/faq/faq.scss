@@ -1,0 +1,342 @@
+.faq {
+	position: relative;
+	background-image: url("../../img/sprite/mountain.svg");
+	background-repeat: no-repeat;
+	background-position: center 100%;
+	background-size: 418px;
+	overflow: hidden;
+	padding: 143px 0 385px 0;
+	transform: translate(0, -35px);
+
+	@include lg {
+		transform: translate(0, -105px);
+		background-position-y: 102%;
+		background-size: 278px;
+		padding: 100px 0 225px 0;
+		margin-bottom: -41px;
+	}
+
+	@include md {
+		padding: 0 0 230px 0;
+	}
+
+	@include sm {
+		background-size: 190px;
+		bottom: 70px;
+		padding: 80px 0 173px 0;
+		transform: translate(0, -6px);
+	}
+
+	&::before,
+	&::after {
+		content: "";
+		z-index: 0;
+		max-width: 550px;
+		width: 100%;
+		min-height: 460px;
+		position: absolute;
+
+		@include xl {
+			max-width: 350px;
+			min-height: 300px;
+		}
+
+		@include md {
+			max-width: 260px;
+			min-height: 220px;
+		}
+
+		@include sm {
+			max-width: 180px;
+			min-height: 140px;
+		}
+	}
+
+	&::before {
+		background-image: url("../../img/sprite/dottedway-mini.svg");
+		background-repeat: no-repeat;
+		background-size: 590px 480px;
+		transform: rotate(127deg);
+		top: 40%;
+		left: -125px;
+
+		@include xl {
+			background-size: 380px 350px;
+			top: 47%;
+			left: -70px;
+		}
+
+		@include md {
+			background-size: 260px 220px;
+			top: 62%;
+			left: 0;
+		}
+
+		@include sm {
+			background-size: 100px 100px;
+			top: 70%;
+			left: -30px;
+		}
+	}
+
+	&::after {
+		background: url("../../img/sprite/dottedway-mini.svg");
+		background-repeat: no-repeat;
+		background-size: 590px 480px;
+		top: -15px;
+		right: -65px;
+
+		@include xl {
+			background-size: 300px 260px;
+			top: 138px;
+			right: -106px;
+		}
+
+		@include lg {
+			top: 88px;
+			right: -152px;
+		}
+
+		@include md {
+			background-size: 260px 220px;
+			top: 30%;
+			right: -12%;
+		}
+
+		@include sm {
+			background-size: 180px 140px;
+			top: 26%;
+			right: -14%;
+		}
+	}
+	// .faq__title
+	&__title {
+		margin: 0 0 30px 0;
+		transform: translate(100%, 0);
+
+		@include md {
+			text-align: center;
+		}
+
+		@include sm {
+			margin: 0 0 22px 0;
+		}
+	}
+	// .faq__decor
+	&__decor {
+		max-width: 40%;
+		margin: 0 0 114px 0;
+		transform: translate(-100%, 0);
+
+		@include xl {
+			max-width: 52%;
+		}
+
+		@include lg {
+			max-width: 68%;
+			margin: 0 0 68px 0;
+		}
+
+		@include md {
+			max-width: 80%;
+		}
+
+		@include sm {
+			max-width: 85%;
+		}
+	}
+	// .faq__container
+	&__container {
+		position: relative;
+		z-index: 1;
+		@include lg {
+			padding: 0;
+		}
+
+		@include md {
+			padding: 0 15px 0 15px;
+		}
+
+		@include sm {
+			padding: 0 5px 0 5px;
+		}
+	}
+	// .faq__item
+	&__item {
+		@include lg-min {
+			&:first-child {
+				letter-spacing: 1.2px;
+			}
+		}
+		@include sm {
+			min-height: 90px;
+		}
+	}
+	// .faq__button
+	&__button {
+		display: flex;
+		justify-content: space-between;
+		font-size: 34px;
+		cursor: pointer;
+		border-bottom: 1px solid $white;
+		padding: 3px 0 25px 60px;
+		margin: 0 0 18px 0;
+		transition: all $hoverTime ease-in-out;
+
+		@include xl {
+			font-size: 30px;
+			padding: 10px 40px 30px 50px;
+		}
+
+		@include lg {
+			padding: 10px 24px 11px 50px;
+			margin: 0 0 18px 0;
+		}
+
+		@include md {
+			font-size: 24px;
+			padding: 10px 0 11px 0;
+		}
+
+		@include sm {
+			font-size: 18px;
+			padding: 0 0 20px 0;
+		}
+
+		@include lg-min {
+			&.closed:hover {
+				color: $teal;
+				border-color: $teal-100;
+			}
+
+			&.closed:active {
+				color: $white-25;
+				border-color: $white-25;
+			}
+
+			&.closed:hover .faq__arrow {
+				stroke: $teal-100;
+			}
+
+			&._active:hover .faq__arrow {
+				stroke: $teal-100;
+			}
+		}
+
+		&._active {
+			border-color: transparent;
+			transition: all $hoverTime ease;
+		}
+
+		&._active .faq__arrow {
+			transform: rotate(-180deg);
+		}
+
+		&._active + .faq__text {
+			opacity: 1;
+			border-bottom: 1px solid $white;
+			padding: 0 0 26px 0;
+			margin: 21px 0 55px 0;
+
+			@include lg {
+				padding: 0 20px 32px 40px;
+			}
+
+			@include sm {
+				margin: -25px 0 32px 0;
+				padding: 0 0 35px 0;
+			}
+		}
+	}
+	// .faq__subtitle
+	&__subtitle {
+		display: block;
+		align-self: center;
+
+		@include md {
+			margin: 0 20px 0 0;
+		}
+
+		@include sm {
+			padding: 0;
+			margin: 0;
+		}
+
+		&--optimal {
+			@include lg {
+				max-width: 330px;
+			}
+
+			@include md {
+				max-width: 100%;
+			}
+
+			@include sm {
+				max-width: 220px;
+			}
+		}
+
+		&--physical {
+			@include lg {
+				max-width: 390px;
+			}
+
+			@include md {
+				max-width: 100%;
+			}
+
+			@include sm {
+				max-width: 230px;
+			}
+		}
+	}
+	// .faq__arrow
+	&__arrow {
+		display: block;
+		width: 70px;
+		height: 70px;
+		flex: 0 0 70px;
+		@include bg;
+		fill: $black-700;
+		stroke: $white;
+		transition: all $hoverTime ease;
+
+		@include md {
+			width: 60px;
+			height: 60px;
+			flex: 0 0 60px;
+		}
+
+		@include sm {
+			width: 40px;
+			height: 40px;
+			flex: 0 0 40px;
+		}
+	}
+	// .faq__text
+	&__text {
+		max-height: 0;
+		line-height: 1.25;
+		letter-spacing: 1.5;
+		overflow: hidden;
+		opacity: 0;
+		padding: 0 0 32px 0;
+		border-bottom: 1px solid transparent;
+		transition: all $hoverTime ease;
+
+		@include lg {
+			font-size: 18px;
+			padding: 0 20px 32px 40px;
+		}
+
+		@include md {
+			font-size: 16px;
+			padding: 0 0px 32px 0;
+		}
+
+		@include sm {
+			font-size: 14px;
+			margin: -32px 0 0 0;
+		}
+	}
+}

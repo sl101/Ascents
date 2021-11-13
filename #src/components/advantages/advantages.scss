@@ -1,0 +1,204 @@
+.advantages {
+	padding: 100px 0 156px 0;
+	transform: translate(0, -20px);
+	overflow: hidden;
+
+	@include lg {
+		padding: 100px 0 25px 0;
+		transform: translate(0, -120px);
+	}
+
+	@include sm {
+		padding: 80px 0 74px 0;
+		transform: translate(0, -63px);
+	}
+	// .advantages__title
+	&__title {
+		display: inline-block;
+		transform: translate(-100%, 0);
+
+		@include xl {
+			margin: 0 0 38px 0;
+		}
+
+		@include lg {
+			max-width: 620px;
+			line-height: 1.1;
+		}
+
+		@include md {
+			display: block;
+			text-align: center;
+		}
+
+		@include sm {
+			max-width: 270px;
+			margin: 0 auto 25px;
+		}
+	}
+	// .advantages__decor
+	&__decor {
+		display: block;
+		max-width: 30%;
+		position: relative;
+		transform: translate(100%, -33px) rotate(180deg);
+		margin: 0 0 108px auto;
+
+		&._animate {
+			transform: translate(0, -33px) rotate(180deg);
+		}
+
+		@include xl {
+			max-width: 100%;
+			transform: translate(0, 0) rotate(180deg);
+			margin: 0 0 99px 40px;
+		}
+
+		@include lg {
+			margin: 0 0 88px 40px;
+		}
+
+		@include md {
+			transform: rotate(0deg);
+			margin: 0 15px 88px 0px;
+		}
+
+		@include sm {
+			margin: 0 15px 60px 0px;
+		}
+	}
+	//.advantages__item
+	&__item {
+		transform: translate(0, 0);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		padding: 0 0 44px 0;
+
+		&.anim-item._animate .advantages__subtitle {
+			transform: translate(0, 0);
+			color: $white;
+		}
+
+		@include md {
+			padding: 0;
+		}
+
+		&:nth-child(even) {
+			flex-direction: row-reverse;
+
+			& .advantages__subtitle {
+				transform: translate(-100%, 0);
+			}
+			@include xl {
+				flex-direction: row;
+			}
+		}
+
+		&:nth-child(even) .advantages__box {
+			@include md {
+				transform: translateX(-150px);
+			}
+		}
+
+		&:not(:last-child) {
+			border-bottom: 2px solid $white;
+			margin: 0 0 70px 0;
+
+			@include lg {
+				margin: 0 0 60px 0;
+			}
+
+			@include md {
+				border-bottom: none;
+			}
+
+			@include sm {
+				margin: 0 0 46px 0;
+			}
+		}
+	}
+	// .advantages__element
+	&__element {
+		// transform: translate(0, 0);
+		max-width: 50%;
+		position: relative;
+		z-index: 1;
+
+		// &.anim-item._animate .advantages__subtitle {
+		// 	transform: translate(0, 0);
+		// }
+
+		@include xl {
+			max-width: 100%;
+			margin-right: -150px;
+		}
+
+		@include lg {
+			max-width: 95%;
+		}
+	}
+	// .advantages__subtitle
+	&__subtitle {
+		transform: translate(100%, 0);
+		font-weight: 600;
+		font-style: italic;
+		font-size: 24px;
+		line-height: 0.7;
+		margin: 0 0 20px 0;
+		transition: all 0.7s ease;
+
+		@include md {
+			font-size: 18px;
+			text-align: center;
+			line-height: 1.1;
+		}
+
+		@include sm {
+			max-width: 244px;
+			margin: 0 0 25px 0;
+		}
+	}
+	//.advantages__text
+	&__text {
+		transform: translate(0, 0);
+		transition: all 0.7s ease 0.1s;
+
+		@include md {
+			font-size: 16px;
+			font-weight: 300;
+		}
+	}
+	//.advantages__box
+	&__box {
+		max-width: 150px;
+		min-height: 150px;
+		position: relative;
+		z-index: 0;
+
+		@include xl-min {
+			max-width: 100%;
+			width: 100%;
+			text-align: center;
+		}
+
+		@include sm {
+			transform: translateY(40px);
+		}
+
+		&.animation .advantages__img {
+			fill-opacity: 1;
+			fill: $teal;
+		}
+	}
+	//.advantages__img
+	&__img {
+		display: inline-block;
+		flex: 0 1 100%;
+		max-width: 150px;
+		min-height: 150px;
+		fill-opacity: 0.1;
+		transition: fill-opacity $popupTime, fill $popupTime ease;
+	}
+}

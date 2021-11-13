@@ -1,0 +1,771 @@
+.footer {
+	padding: 115px 0 10px 0;
+	transform: translate(0, -60px);
+
+	@include lg {
+		padding: 100px 0 0 0;
+	}
+
+	@include sm {
+		padding: 80px 0 0 0;
+		transform: translate(0, -100px);
+	}
+	// .footer__wrapper
+	&__wrapper {
+		border-bottom: 1px solid $white-60;
+		margin: 0 0 25px 0;
+
+		@include lg {
+			margin: 0 0 13px 0;
+		}
+
+		@include sm {
+			margin: 0 0 0 0;
+		}
+	}
+	// .footer__inner
+	&__inner {
+		font-size: 18px;
+		position: relative;
+		margin: 0 0 17px 0;
+
+		@include xl {
+			margin: 0 0 35px 0;
+		}
+
+		@include sm {
+			margin: 0 0 40px 0;
+		}
+	}
+	// .footer__top
+	&__top {
+		display: grid;
+		justify-content: space-between;
+		grid-template-columns: repeat(5, auto);
+		margin: 0 0 102px 0;
+
+		@include xl {
+			grid-template-columns: repeat(4, auto);
+		}
+
+		@include lg {
+			grid-row-gap: 40px;
+			grid-template: auto / 1fr 1fr;
+			grid-template-areas: "menu menu" "contacts address" "social payments";
+			padding: 0 50px 0 50px;
+			margin: 0 0 67px 0;
+		}
+
+		@include md {
+			font-size: 14px;
+			grid-template: auto / 1fr;
+			grid-template-areas: "menu" "contacts" "address" "social" "payments";
+			justify-items: center;
+			text-align: center;
+		}
+
+		@include sm {
+			line-height: 1;
+			grid-gap: 28px;
+			margin: 0 0 30px 0;
+		}
+	}
+	// .footer__logo
+	&__logo {
+		margin: 0 40px 0 0;
+		align-self: start;
+
+		@include xl {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+		}
+
+		@include sm {
+			display: none;
+		}
+	}
+	// .footer__menu
+	&__menu {
+		max-width: 180px;
+		width: 100%;
+		margin: 0 0 0 15px;
+		line-height: 1.45;
+
+		@include xl {
+			margin: 0 0 0 0;
+		}
+
+		@include lg {
+			grid-area: menu;
+			line-height: 1.2;
+			text-align: center;
+			margin: 0 auto 20px;
+		}
+
+		@include md {
+			line-height: 1;
+			margin: 0 auto 5px;
+		}
+
+		@include sm {
+			margin: 0 auto 18px;
+		}
+	}
+	// .footer__menu-item
+	&__menu-item {
+		margin: 0 0 10px 0;
+
+		@include sm {
+			margin: 0 0 5px 0;
+		}
+	}
+	// .footer__menu-link
+	&__menu-link {
+		display: block;
+		@include linkHover;
+		@include line-clamp(2);
+		border-bottom: 1px solid transparent;
+		transition: all $hoverTime ease;
+	}
+	// .footer__unit
+	&__unit {
+		@include lg {
+			max-width: 235px;
+			width: 100%;
+		}
+
+		&--contacts {
+			margin: 0 40px 0 0;
+
+			@include xl {
+				margin: 0 0 0 0;
+			}
+
+			@include lg {
+				grid-area: contacts;
+			}
+		}
+
+		&--address {
+			font-style: normal;
+			font-weight: 500;
+			margin: 0 35px 0 0;
+
+			@include xl {
+				margin: 0 0 0 0;
+			}
+
+			@include lg {
+				grid-area: address;
+				justify-self: end;
+			}
+
+			@include md {
+				max-width: 200px;
+				justify-self: center;
+				margin: 0 0 0 0;
+			}
+
+			@include sm {
+				margin: 0 0 20px 0;
+			}
+		}
+
+		&--social {
+			width: 200px;
+			@include lg {
+				grid-area: social;
+			}
+
+			@include sm {
+				margin: 0 0 30px 0;
+			}
+		}
+
+		&--payments {
+			display: none;
+
+			@include lg {
+				display: block;
+				grid-area: payments;
+				justify-self: end;
+			}
+
+			@include md {
+				margin: -6px auto 0;
+			}
+		}
+	}
+	// .footer__payments
+	&__payments {
+		display: flex;
+		justify-content: space-evenly;
+	}
+	// .footer__payments-img
+	&__payments-img {
+		max-width: 91px;
+		height: 38px;
+	}
+	// .footer__title
+	&__title {
+		font-weight: 400;
+		font-size: 18px;
+		font-style: normal;
+		border-bottom: 1px solid $white;
+		padding: 0 0 8px 0;
+		margin: 0 0 20px 0;
+
+		@include sm {
+			font-size: 14px;
+			padding: 0 0 12px 0;
+		}
+	}
+	// .footer__contact
+	&__contact {
+		display: block;
+		margin: 0 0 15px 0;
+		@include linkHover;
+		border-bottom: 1px solid transparent;
+		transition: text-decoration $hoverTime, color $hoverTime;
+	}
+	// .footer__street
+	&__street {
+		max-width: 180px;
+		margin: 0 0 15px 0;
+
+		@include md {
+			max-width: 150px;
+			margin: 0 auto 15px;
+		}
+	}
+	// .footer__times
+	&__times {
+		margin: 0 0 10px 0;
+	}
+	// .footer__days
+	&__days {
+		margin: 0 23px 0 0;
+	}
+	// .footer__networks
+	&__networks {
+		display: grid;
+		grid-row-gap: 25px;
+		grid-column-gap: 10px;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat (2, 1fr);
+
+		@include lg {
+			display: grid;
+			grid-gap: 25px;
+			justify-items: center;
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: repeat (2, 1fr);
+		}
+
+		@include lg {
+			grid-row-gap: 20px;
+			justify-items: left;
+			margin: 0 auto;
+		}
+
+		@include md {
+			grid-row-gap: 30px;
+			justify-items: center;
+		}
+
+		@include sm {
+			max-width: 155px;
+			margin: 0 auto;
+			grid-gap: 25px;
+		}
+	}
+	// .footer__network
+	&__network {
+		width: 32px;
+		height: 32px;
+		transition: all $hoverTime ease;
+
+		@include md {
+			margin: 0 0 0 0;
+		}
+
+		@include sm {
+			width: 23px;
+			height: 23px;
+		}
+	}
+	// .footer__icon
+	&__icon {
+		transition: all $hoverTime ease;
+
+		@include lg-min {
+			&:hover .footer__image {
+				box-shadow: 5px 5px 5px $black-800;
+				fill: $teal-100;
+			}
+
+			&:active .footer__image {
+				box-shadow: 0px 0px 0px transparent;
+				fill: $white-25;
+			}
+
+			&:focus .footer__image {
+				fill: $teal-100;
+			}
+		}
+	}
+	// .footer__image
+	&__image {
+		border-radius: 8px;
+		display: block;
+		width: 32px;
+		height: 32px;
+		fill: $white;
+		transition: all $hoverTime ease;
+
+		@include sm {
+			width: 23px;
+			height: 23px;
+		}
+	}
+	// .footer__form
+	&__form {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		min-height: 175px;
+		align-items: center;
+		border: 1px solid $white-60;
+		padding: 0 30px 0 30px;
+		margin: 0 0 82px 0;
+
+		@include xl {
+			min-height: 297px;
+			display: grid;
+			grid-row-gap: 30px;
+			justify-items: center;
+			justify-content: center;
+			padding: 30px 0 45px 0;
+			margin: 0 35px 60px 35px;
+		}
+
+		@include lg {
+			margin: 0 35px 65px 35px;
+		}
+
+		@include md {
+			padding: 30px 0 40px 0;
+			margin: 0 auto 35px;
+		}
+
+		@include sm {
+			align-content: center;
+			max-width: 290px;
+			min-height: 211px;
+			padding: 0;
+		}
+	}
+	// .footer__item
+	&__item {
+		&--subscription {
+			max-width: 280px;
+			@include Comfortaa(700);
+			font-size: 24px;
+			display: flex;
+			justify-content: space-between;
+			padding: 13px 0 0 4px;
+
+			@include lg {
+				max-width: 192px;
+				flex-direction: column;
+				align-items: center;
+				padding: 0;
+			}
+
+			@include sm {
+				position: relative;
+				top: -10px;
+				max-width: 160px;
+				font-size: 14px;
+				flex-direction: row;
+			}
+		}
+		&--email {
+			max-width: 420px;
+			width: 100%;
+			padding: 40px 0 0 0;
+			position: relative;
+			margin: 0 0 0 100px;
+
+			@include xl {
+				padding: 0;
+				margin: 0;
+			}
+
+			@include md {
+				max-width: 100%;
+				// width: 100%;
+			}
+
+			@include sm {
+				max-width: 240px;
+			}
+		}
+		&--btn {
+			max-width: 390px;
+			width: 100%;
+			min-height: 50px;
+			border: none;
+			outline: transparent;
+			background-color: $white;
+			transition: all $hoverTime ease;
+			margin: 25px 0 30px 0;
+
+			@include lg-min {
+				&:hover {
+					border: 1px solid $white-60;
+					background-color: $black-700;
+					color: $white-300;
+					box-shadow: inset 0 0 15px $black-2;
+				}
+
+				&:focus {
+					border: 1px solid $white-60;
+					background-color: $black-700;
+					color: $teal-100;
+				}
+
+				&:active {
+					background-color: $grey-200;
+					color: $white;
+				}
+			}
+
+			@include lg {
+				display: none;
+			}
+
+			&._active {
+				background-color: $grey-250;
+				border-color: transparent;
+				color: $white;
+			}
+		}
+	}
+	// .footer__envelope
+	&__envelope {
+		max-width: 52px;
+		height: 41px;
+		fill: $white;
+		margin: 0 32px 0 0;
+		position: relative;
+		top: 10px;
+
+		@include lg {
+			width: 32px;
+			height: 25px;
+			margin: 0 0 20px 0;
+		}
+
+		@include sm {
+			width: 90px;
+			height: 32px;
+			top: 0;
+			right: 6px;
+			margin: 0;
+		}
+	}
+	// .footer__chest
+	&__chest {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-bottom: 1px solid $white-60;
+		padding: 0 0 8px 0;
+		margin: 0 0 15px 0;
+	}
+	// .footer__arrow
+	&__arrow {
+		display: none;
+		border: 0;
+		background-color: transparent;
+		@include bg;
+		fill: $white;
+		cursor: pointer;
+
+		@include lg {
+			display: block;
+		}
+
+		&:focus {
+			outline: transparent;
+			fill: $teal-100;
+		}
+	}
+	// .footer__link
+	&__link {
+		width: 103px;
+		height: 7px;
+
+		@include md {
+			max-width: 53px;
+		}
+	}
+	// .footer__label
+	&__label {
+		width: 100%;
+		position: relative;
+		padding: 0 10px 0 0;
+		color: $white-25;
+	}
+	// .footer__input
+	&__input {
+		display: block;
+		width: 100%;
+		align-self: baseline;
+		@include Montserrat(400);
+		font-size: 18px;
+		color: $teal-100;
+		background-color: transparent;
+		border: none;
+		outline: transparent;
+		transition: all $hoverTime ease;
+
+		&::placeholder {
+			color: $white-30;
+			transition: all $hoverTime ease;
+		}
+
+		@include lg-min {
+			&:hover {
+				&::placeholder {
+					color: $teal;
+				}
+			}
+		}
+
+		&:focus {
+			outline: transparent;
+			border-color: $teal-100;
+			&::placeholder {
+				color: $teal-100;
+			}
+		}
+
+		@include md {
+			font-size: 12px;
+		}
+	}
+	// .footer__checkbox
+	&__checkbox {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		opacity: 0;
+	}
+	// .footer__check
+	&__check {
+		position: relative;
+		display: block;
+		font-size: 16px;
+		cursor: pointer;
+		transition: all $hoverTime ease;
+
+		// &._focus {
+		// color: red;
+		// 	&::before {
+		// 		border-color: $teal-100;
+		// 	}
+		// }
+
+		@include sm {
+			max-width: 238px;
+			font-size: 11px;
+			padding-left: 30px;
+		}
+
+		&:before,
+		&:after {
+			color: transparent;
+			display: inline-block;
+			text-align: center;
+			transition: all $hoverTime ease;
+		}
+
+		&:before {
+			content: "";
+			border: 1px solid $white;
+			max-width: 12px;
+			width: 100%;
+			min-height: 12px;
+			border-radius: 2px;
+			margin-right: 10px;
+
+			@include sm {
+				position: absolute;
+				top: 4px;
+				left: 0;
+				max-width: 20px;
+				min-height: 20px;
+			}
+		}
+
+		&:after {
+			content: "\2714";
+			position: absolute;
+			top: 4px;
+			left: 3px;
+			font-size: 8px;
+			color: transparent;
+			display: inline-block;
+			text-align: center;
+
+			@include sm {
+				top: 4px;
+				left: 4px;
+				font-size: 14px;
+			}
+		}
+
+		&._active {
+			&::after {
+				color: $white;
+			}
+		}
+
+		@include lg-min {
+			&:hover {
+				color: $teal-100;
+				&::before {
+					border-color: $teal-100;
+				}
+
+				&._active {
+					&::after {
+						color: $teal-100;
+					}
+				}
+			}
+		}
+	}
+	// .footer__span
+	&__span {
+		text-decoration: underline;
+
+		@include sm {
+			text-decoration: none;
+		}
+	}
+	// .footer__bottom
+	&__bottom {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		font-weight: 500;
+		color: $white-100;
+
+		@include xl {
+			padding: 0 0 140px 0;
+		}
+
+		@include lg {
+			flex-direction: column;
+		}
+
+		@include md {
+			font-size: 10px;
+		}
+
+		@include sm {
+			padding: 0;
+		}
+	}
+
+	&__block:not(:last-child) {
+		@include lg {
+			margin: 0 0 20px 0;
+		}
+	}
+	// .footer__block
+	&__block {
+		max-width: 50%;
+		@include line-clamp(2);
+
+		@include lg-min {
+			@include linkHover;
+			&:hover {
+				& .footer__picture {
+					fill: $teal-100;
+				}
+			}
+		}
+
+		@include lg {
+			max-width: 100%;
+			text-decoration: underline;
+		}
+	}
+	// .footer__picture
+	&__picture {
+		display: inline-block;
+		width: 18px;
+		height: 18px;
+		object-fit: cover;
+		fill: $white-100;
+		margin: 0 5px 0 0;
+		position: relative;
+		top: 2px;
+		transition: fill $hoverTime;
+
+		@include md {
+			width: 12px;
+			height: 12px;
+			top: 0;
+		}
+
+		@include sm {
+			top: 3px;
+		}
+
+		&--policy {
+			width: 13px;
+
+			@include md {
+				width: 9px;
+			}
+		}
+	}
+	// .footer__copy
+	&__copy {
+		display: block;
+		@include Roboto(400);
+		font-size: 14px;
+		text-align: center;
+		margin: 0 0 17px 0;
+
+		@include sm {
+			font-size: 9px;
+		}
+
+		&::before {
+			content: "";
+			display: inline-block;
+			background-image: url("../../img/sprite/copy.svg");
+			@include bg;
+			width: 16px;
+			height: 16px;
+			position: relative;
+			top: 3px;
+			margin: 0 7px 0 0;
+
+			@include sm {
+				background-size: 9px 9px;
+				top: 4px;
+				left: 3px;
+			}
+		}
+	}
+}

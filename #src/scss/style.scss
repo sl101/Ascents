@@ -1,0 +1,23 @@
+@import "fonts";
+@import "vars";
+@import "mixins";
+@import "reset";
+@import "global";
+@import "form";
+
+@import "../components/form-request/form-request.scss";
+@import "../components/cards/card.scss";
+@import "../components/popup/popup.scss";
+@import "../components/request-popup/request-popup.scss";
+@import "../components/footer-popup/footer-popup.scss";
+@import "../components/card-popup/card-popup.scss";
+@import "../components/hero/hero.scss";
+@import "../components/header/header.scss";
+@import "../components/itineraries/itineraries.scss";
+@import "../components/advantages/advantages.scss";
+@import "../components/gallery/gallery.scss";
+@import "../components/reviews/reviews.scss";
+@import "../components/faq/faq.scss";
+@import "../components/form-data/form-data.scss";
+@import "../components/form-connect/form-connect.scss";
+@import "../components/footer/footer.scss";

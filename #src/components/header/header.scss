@@ -1,0 +1,339 @@
+// .header
+.header {
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 6;
+	transition: background-color $linkTime ease;
+
+	&.sticky {
+		background-color: $black-650;
+	}
+
+	&.sticky .header__container {
+		padding: 10px 20px 10px 15px;
+	}
+
+	&.sticky .header__logo {
+		max-width: 50px;
+		min-height: 50px;
+	}
+
+	&.sticky .header__logo-img {
+		width: 50px;
+		height: 50px;
+	}
+
+	&.sticky .burger {
+		top: 30px;
+	}
+
+	&.sticky-vh {
+		background-color: $black-700;
+	}
+	// .header__container
+	&__container {
+		min-height: 80px;
+		display: flex;
+		align-items: center;
+		font-size: 18px;
+		line-height: 1.2;
+		position: relative;
+		padding: 30px 15px;
+		transition: all $linkTime ease;
+
+		@include lg {
+			padding: 40px 0;
+		}
+
+		@include small-height {
+			padding: 10px 15px;
+			min-height: 60px;
+		}
+	}
+	// .header__logo
+	&__logo {
+		margin-right: 35px;
+
+		@include xl {
+			// grid-area: logo;
+			// align-self: start;
+		}
+
+		@include lg {
+			margin: 0 auto;
+		}
+
+		@include small-height {
+			align-self: flex-start;
+		}
+	}
+}
+// menu
+.menu {
+	width: 100%;
+
+	@include lg {
+		width: 100%;
+		height: 100%;
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		// position: fixed;
+		position: absolute;
+		top: 0;
+		left: 0;
+		overflow: auto;
+		background: url("../../img/sprite/way_for_burger.svg") 0 50px no-repeat,
+			url("../../img/sprite/mountain.svg") 42% 106% no-repeat, $black-700;
+		transform: translate(-100%, 0);
+		padding: 146px 50px 65px 152px;
+		transition: transform $hoverTime ease 0s;
+	}
+
+	@include md {
+		background: url("../../img/sprite/way_for_burger.svg") 0 18% / 100% no-repeat,
+			url("../../img/sprite/mountain.svg") 50% 106% / 226px no-repeat, $black-700;
+		padding: 37px 10px 25px 51px;
+	}
+
+	&._active {
+		transform: translate(0, 0);
+
+		&::-webkit-scrollbar {
+			width: 2px;
+		}
+
+		&::-webkit-scrollbar-track {
+			background-color: $white-25;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background-color: $white;
+		}
+
+		@include small-height {
+			// background: url("../../img/sprite/way_for_burger.svg") 0 18% / 100% no-repeat,
+			// 	url("../../img/sprite/mountain.svg") 50% 106% / 226px no-repeat, $black-700;
+			padding: 10px 10px 10px 40px;
+		}
+	}
+
+	// .menu__body
+	&__body {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		@include xl {
+			display: grid;
+			grid-template-rows: 1fr 1fr;
+			grid-template-columns: 2fr 1fr;
+			grid-template-areas: "menu tel" "menu lang";
+		}
+
+		@include lg {
+			height: 100%;
+			grid-template-rows: auto auto;
+			grid-template-columns: 2fr 1fr;
+			grid-template-areas: "menu menu" "tel lang";
+		}
+
+		@include sm {
+			height: 100%;
+		}
+
+		@include small-height {
+			grid-template-rows: 2fr 50px;
+		}
+	}
+	// .menu__logo
+	&__logo {
+		@include bg;
+		display: none;
+
+		@include lg {
+			display: block;
+			margin-bottom: 105px;
+		}
+
+		@include sm {
+			max-width: 50px;
+			min-height: 50px;
+			margin-bottom: 40px;
+		}
+
+		@include small-height {
+			margin-bottom: 30px;
+		}
+	}
+	// .menu__logo-img
+	&__logo-img {
+		@include sm {
+			width: 50px;
+			height: 50px;
+		}
+	}
+	// .menu__list
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		z-index: 3;
+
+		@include xl-min {
+			padding-top: 10px;
+			margin-right: 115px;
+		}
+
+		@include xl {
+			grid-area: menu;
+			padding-top: 4px;
+			// padding-top: 10px;
+			// align-self: flex-start;
+			order: 1, 2;
+		}
+
+		@include lg {
+			width: 100%;
+			flex-direction: column;
+			align-self: start;
+			font-size: 24px;
+			z-index: 14;
+			padding: 0;
+			margin-bottom: 75px;
+		}
+
+		@include small-height {
+			// margin-bottom: 30px;
+		}
+	}
+	// .menu__item
+	&__item {
+		display: block;
+
+		&:not(:last-child) {
+			@include lg-min {
+				margin-right: 35px;
+			}
+		}
+
+		@include lg {
+			line-height: 1;
+			padding: 20px 0;
+		}
+
+		@include sm {
+			padding: 15px 0;
+		}
+
+		@include small-height {
+			padding: 15px 0;
+		}
+	}
+	// .menu__link
+	&__link {
+		display: inline-block;
+		// border-bottom: 1px solid transparent;
+		@include linkHover;
+		@include line-clamp;
+		// transition: all $hoverTime ease;
+
+		@include lg {
+			width: 100%;
+		}
+
+		@include sm {
+			font-size: 16px;
+		}
+	}
+	// .menu__tel
+	&__tel {
+		@include line-clamp(3);
+		@include linkHover;
+		line-height: 1.5;
+		margin-left: auto;
+		transition: all $hoverTime ease;
+
+		@include xl-min {
+			padding-top: 7px;
+		}
+
+		@include xl {
+			padding-bottom: 5px;
+			justify-self: end;
+			grid-area: tel;
+			margin-left: 0;
+		}
+
+		@include lg {
+			font-size: 24px;
+			align-self: end;
+			padding: 0;
+			margin-right: auto;
+		}
+
+		@include sm {
+			font-size: 16px;
+		}
+
+		@include small-height {
+			align-self: flex-start;
+		}
+	}
+}
+// .radiobuttons
+.radiobuttons {
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+	margin-left: auto;
+	z-index: 3;
+
+	@include xl-min {
+		padding-top: 7px;
+	}
+
+	@include xl {
+		grid-area: lang;
+		align-self: end;
+	}
+
+	@include sm {
+		font-size: 16px;
+	}
+
+	@include small-height {
+		align-self: flex-start;
+	}
+
+	&__item {
+		color: $white-100;
+		cursor: pointer;
+		@include linkHover;
+		transition: all $hoverTime ease;
+
+		&:not(:last-child) {
+			margin-right: 4px;
+		}
+
+		&.active {
+			color: $white;
+			border-bottom: 1px solid $white;
+		}
+	}
+
+	&__input {
+		display: none;
+	}
+	// .radiobuttons__item
+	&__item {
+	}
+	// .radiobuttons__link
+	&__link {
+		display: block;
+	}
+}

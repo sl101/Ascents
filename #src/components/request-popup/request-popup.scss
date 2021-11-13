@@ -1,0 +1,133 @@
+.request-popup {
+	overflow: auto;
+	padding: 50px 0 0 0;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	&__body {
+		max-width: 1000px;
+		position: relative;
+		border: 1px solid $white;
+		background-color: $black-700;
+		padding: 75px 0 55px 0;
+		margin: 0 auto 60px;
+
+		@include xl {
+			max-width: 850px;
+		}
+
+		@include lg {
+			max-width: 680px;
+			padding: 75px 20px 55px 20px;
+		}
+
+		@include md {
+			padding: 50px 30px 30px 30px;
+		}
+
+		@include sm {
+			max-width: 290px;
+			padding: 40px 20px 40px 20px;
+		}
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			z-index: 0;
+		}
+
+		&::before {
+			width: 503px;
+			height: 503px;
+			top: 28%;
+			left: 50%;
+			transform: translate(-50%, 0);
+			background: url("../../img/sprite/mountain.svg");
+			@include bg;
+
+			@include md {
+				width: 250px;
+				height: 250px;
+				top: 100%;
+				left: 50%;
+				transform: translate(-50%, -94%);
+			}
+
+			@include sm {
+				width: 150px;
+				height: 150px;
+				top: 100%;
+				left: 50%;
+				transform: translate(-50%, -94%);
+			}
+		}
+
+		&::after {
+			width: 956px;
+			height: 550px;
+			top: 16%;
+			left: 51%;
+			transform: translate(-50%, 0);
+			background: url("../../img/sprite/way.svg");
+			@include bg;
+
+			@include xl {
+				width: 810px;
+				height: 466px;
+				top: 28%;
+				left: 50%;
+			}
+
+			@include lg {
+				width: 610px;
+				height: 350px;
+				top: 20%;
+				left: 50%;
+			}
+
+			@include md {
+				width: 440px;
+				height: 255px;
+				top: 50%;
+				left: 50%;
+			}
+
+			@include sm {
+				width: 240px;
+				height: 140px;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, 0);
+			}
+		}
+	}
+
+	&__content {
+		position: relative;
+		z-index: 1;
+	}
+
+	&__close {
+		top: 46px;
+		right: 36px;
+
+		@include sm {
+			top: 20px;
+			right: 10px;
+		}
+	}
+
+	&__title {
+		@include Comfortaa(700);
+		font-size: 48px;
+		padding: 10px 0 0 0;
+		margin: 0 0 30px 0;
+		text-align: center;
+
+		@include sm {
+			font-size: 21px;
+			margin: 0 0 32px 0;
+		}
+	}
+}

@@ -1,0 +1,172 @@
+//Подключение шрифта
+@mixin font($font_name, $file_name, $weight, $style) {
+	@font-face {
+		font-family: $font_name;
+		font-display: swap;
+		font-weight: #{$weight};
+		font-style: #{$style};
+		src: url("../fonts/#{$file_name}.woff2") format("woff2"), url("../fonts/#{$file_name}.woff") format("woff");
+	}
+}
+
+@mixin Roboto($Rfw) {
+	font-family: "Roboto", sans-serif;
+	font-weight: $Rfw;
+}
+
+@mixin Comfortaa($Rfw) {
+	font-family: "Comfortaa", sans-serif;
+	font-weight: $Rfw;
+}
+
+@mixin Montserrat($Rfw) {
+	font-family: "Montserrat", sans-serif;
+	font-weight: $Rfw;
+}
+
+@mixin bg {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+@mixin sm-min {
+	@media only screen and (min-width: #{$screen-sm + px}) {
+		@content;
+	}
+}
+
+@mixin sm {
+	@media only screen and (max-width: #{$screen-sm + px}) {
+		@content;
+	}
+}
+
+@mixin md-min {
+	@media only screen and (min-width: #{$screen-md + px}) {
+		@content;
+	}
+}
+
+@mixin md {
+	@media only screen and (max-width: #{$screen-md + px}) {
+		@content;
+	}
+}
+
+@mixin lg-min {
+	@media only screen and (min-width: #{$screen-lg + px}) {
+		@content;
+	}
+}
+
+@mixin lg {
+	@media only screen and (max-width: #{$screen-lg + px}) {
+		@content;
+	}
+}
+
+@mixin xl-min {
+	@media only screen and (min-width: #{$screen-xl + px}) {
+		@content;
+	}
+}
+
+@mixin xl {
+	@media only screen and (max-width: #{$screen-xl + px}) {
+		@content;
+	}
+}
+
+@mixin small-height {
+	@media only screen and (max-height: #{$screen-sm + px}) {
+		@content;
+	}
+}
+
+@mixin medium-height {
+	@media only screen and (max-height: #{$screen-md + px}) {
+		@content;
+	}
+}
+
+@mixin big-height {
+	@media only screen and (max-height: #{$screen-lg + px}) {
+		@content;
+	}
+}
+
+@mixin line-clamp($lines: 1, $line-height: null) {
+	overflow: hidden;
+
+	@if ($lines==1) {
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	@if ($lines > 1) {
+		@if ($line-height) {
+			$max-height: #{$lines + " * (" + $line-height + ")"};
+			max-height: calc(#{$max-height});
+		}
+		@supports (-webkit-line-clamp: 1) {
+			display: -webkit-box;
+			-webkit-line-clamp: $lines;
+			-webkit-box-orient: vertical;
+			max-height: 100%;
+		}
+	}
+}
+
+@mixin linkHover {
+	@media only screen and (min-width: #{$screen-lg + px}) {
+		border-bottom: 1px solid transparent;
+		transition: all $hoverTime ease;
+		&:hover {
+			color: $teal-100;
+		}
+
+		&:active {
+			color: $white-25;
+		}
+
+		&:focus {
+			outline: none;
+			border-color: $teal-100;
+		}
+	}
+}
+
+@mixin inputHover {
+	@media only screen and (min-width: #{$screen-lg + px}) {
+		transition: all $hoverTime ease;
+
+		&:hover {
+			color: $teal-100;
+			box-shadow: 5px 5px 10px 0px $black-9;
+			background-color: $black-700;
+			border-color: transparent;
+
+			&::placeholder {
+				color: $teal;
+			}
+		}
+
+		&:active {
+			color: $white-25;
+			&::placeholder {
+				color: $white-25;
+			}
+		}
+
+		&:focus {
+			color: $teal;
+			background-color: $black-700;
+			border-color: transparent;
+
+			&::placeholder {
+				color: $teal;
+			}
+		}
+	}
+}

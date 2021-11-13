@@ -1,0 +1,114 @@
+.card {
+	min-height: 715px;
+	@include bg;
+	display: flex;
+	align-items: flex-end;
+	box-shadow: 7px 7px 10px 5px $black-9;
+
+	@include sm {
+		min-height: 570px;
+	}
+	// .card__content
+	&__content {
+		width: 100%;
+		background-color: $black-550;
+		padding: 27px 25px 14px 25px;
+		text-align: center;
+
+		@include sm {
+			padding: 22px 2px 21px 2px;
+		}
+	}
+	// .card__title
+	&__title {
+		font-weight: 500;
+		font-size: 24px;
+		@include line-clamp;
+		margin: 0 0 25px 0;
+
+		@include sm {
+			font-size: 16px;
+			margin: 0 0 25px 0;
+		}
+	}
+	// .card__title-bottom
+	&__title-bottom {
+		display: block;
+		@include line-clamp;
+	}
+	// .card__list
+	&__list {
+		margin: 0 0 36px 0;
+	}
+	// .card__item
+	&__item {
+		display: flex;
+		justify-content: space-between;
+		font-size: 18px;
+		align-items: center;
+
+		@include sm {
+			flex-direction: column;
+			align-items: center;
+			font-size: 16px;
+		}
+
+		&:not(:last-child) {
+			margin: 0 0 19px 0;
+
+			@include sm {
+				margin: 0 0 15px 0;
+			}
+		}
+	}
+	// .card__text
+	&__text {
+		position: relative;
+		padding: 0 0 0 36px;
+		margin: 0 36px 0 0;
+
+		@include sm {
+			padding: 0 0 0 17px;
+			margin: 0 17px 5px 0;
+		}
+	}
+	// .card__icon
+	&__icon {
+		display: block;
+		width: 25px;
+		height: 25px;
+		object-fit: cover;
+		fill: $white;
+		position: absolute;
+		left: 0;
+
+		@include sm {
+			width: 12px;
+			height: 12px;
+			top: 3px;
+		}
+	}
+	// .card__value
+	&__value {
+		font-weight: 600;
+		font-size: 24px;
+
+		@include sm {
+			font-size: 20px;
+			font-weight: 500;
+			margin: 0;
+		}
+	}
+	// .card__more
+	&__more {
+		max-width: 300px;
+		font-weight: 400;
+		padding: 12px 10px 15px 10px;
+
+		@include sm {
+			font-size: 16px;
+			max-width: 200px;
+			padding: 8px 10px 8px 10px;
+		}
+	}
+}

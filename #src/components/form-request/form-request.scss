@@ -1,0 +1,174 @@
+.form-request {
+	// .form-request__title
+	&__title {
+		padding: 10px 0 0 0;
+		margin: 0 0 30px 0;
+		text-align: center;
+
+		@include sm {
+			font-size: 21px;
+			margin: 0 0 32px 0;
+		}
+	}
+	// .form-request__inner
+	&__inner {
+		max-width: 640px;
+		margin: 0 auto;
+
+		@include lg {
+			max-width: 100%;
+		}
+	}
+
+	&__item,
+	&__btn {
+		@include sm {
+			min-height: 45px;
+		}
+	}
+	// .form-request__item
+	&__item {
+		display: flex;
+		align-items: center;
+		margin: 0 0 20px 0;
+		border: 1px solid $white;
+		padding: 25px 10px 25px 15px;
+
+		@include lg-min {
+			&:hover {
+				& .form-request__icon {
+					fill: $teal-100;
+				}
+				& .form-request__input {
+					&::placeholder {
+						color: $teal-100;
+					}
+				}
+			}
+			&:active {
+				& .form-request__icon {
+					fill: $white-25;
+				}
+				& .form-request__input {
+					&::placeholder {
+						color: $white-25;
+					}
+				}
+			}
+		}
+
+		@include md {
+			font-size: 16px;
+		}
+
+		@include sm {
+			font-size: 12px;
+			padding: 10px 10px 10px 10px;
+			margin: 0 0 15px 0;
+		}
+	}
+	// .form-request__btn
+	&__btn {
+		display: block;
+		margin: 0 0 7px 0;
+
+		@include lg-min {
+			&:hover {
+				background-color: $grey-200;
+				border-color: inherit;
+			}
+
+			&:active {
+				box-shadow: 0 0 0 0 transparent;
+			}
+
+			&:focus {
+				border-color: $white;
+			}
+		}
+
+		@include md {
+			margin: 0 0 10px 0;
+			max-width: 100%;
+		}
+
+		@include sm {
+			font-weight: 600;
+			font-size: 18px;
+			padding: 5px 10px 5px 10px;
+		}
+
+		&._active {
+			background-color: $white-200;
+			border-color: transparent;
+			color: $black-9;
+		}
+	}
+	// .form-request__text
+	&__text {
+		max-width: 380px;
+		font-size: 14px;
+		color: $white-60;
+
+		@include md {
+			margin: 0 auto;
+		}
+
+		@include sm {
+			display: none;
+		}
+	}
+	// .form-request__icon
+	&__icon {
+		display: block;
+		width: 15px;
+		height: 15px;
+		object-fit: cover;
+		fill: $white;
+		margin: 3px 0 0 0;
+		transition: all $hoverTime ease;
+
+		@include sm {
+			width: 13px;
+			height: 13px;
+		}
+	}
+	// .form-request__label
+	&__label {
+		display: block;
+		width: 100%;
+	}
+	// .form-request__input
+	&__input {
+		font-size: inherit;
+		transition: all $hoverTime ease;
+
+		&::placeholder {
+			transition: all $hoverTime ease;
+		}
+
+		@include lg-min {
+			&:hover {
+				color: $teal-100;
+				&::placeholder {
+					color: $teal-100;
+				}
+			}
+
+			&:active {
+				color: $white-25;
+				&::placeholder {
+					color: $white-25;
+				}
+			}
+
+			&:focus {
+				text-decoration: underline;
+			}
+		}
+
+		@include md {
+			padding: 3px 0 0 10px;
+		}
+	}
+}
