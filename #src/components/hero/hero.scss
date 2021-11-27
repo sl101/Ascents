@@ -88,27 +88,34 @@
 }
 
 .slider {
-	width: 100%;
-	height: 400px;
-	margin: auto 0;
 	position: relative;
+	height: 400px;
+	overflow: hidden;
+	margin: auto 0;
+	align-items: center;
 
 	@include sm {
 		text-align: center;
 	}
 
 	@include small-height {
-		height: 260px;
+		min-height: 260px;
 	}
-	// // .slider__wrapper
-	// &__wrapper {
-	// }
-	// // .slider__slide
-	// &__slide {
-	// 	display: flex;
-	// 	flex-direction: column;
-	// 	justify-content: center;
-	// }
+	// .slider__wrapper
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+
+		@include md {
+			flex-direction: row;
+		}
+	}
+	// .slider__slide
+	&__slide {
+		@include md {
+			flex: 0 0 100%;
+		}
+	}
 	// .slider__title
 	&__title {
 		max-width: 836px;
@@ -182,14 +189,15 @@
 		}
 	}
 	// .slider__scrollbar
-	&__scrollbar {
+	&__scrollbar.swiper-scrollbar {
 		position: absolute;
-		top: 13%;
-		right: 3px;
+		z-index: 3;
+		top: 25px;
+		right: 10px;
 		background-color: $white-25;
 		width: 5px;
 		border-radius: 2px;
-		height: 80%;
+		height: 350px;
 
 		@include lg {
 			display: none;
@@ -197,22 +205,21 @@
 	}
 
 	&__scrollbar .swiper-scrollbar-drag {
-		min-height: 50px;
-		cursor: pointer;
+		height: 50px;
 		background-color: $white;
 	}
 	// .slider-pagination
 	&__pagination {
+		position: absolute;
+		z-index: 0;
+		top: 0;
+		right: 5px;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: flex-end;
 		font-size: 0;
-		height: 96%;
-		position: absolute;
-		top: 20px;
-		cursor: pointer;
-		z-index: 0;
+		height: 400px;
 
 		@include lg {
 			display: none;

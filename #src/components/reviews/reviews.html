@@ -31,12 +31,11 @@
 
 	<div class="reviews__decor decor anim-item"></div>
 
-	<div class="swiper-reviews__container">
+	<div class="reviews__container">
 
-		<div class="swiper-reviews swiper-container">
-			<ul class="swiper-reviews__wrapper swiper-wrapper">
-
-				<li class="swiper-reviews__slide swiper-slide">
+		<div class="swiper-reviews">
+			<ul class="swiper-reviews__wrapper">
+				<li class="swiper-reviews__slide">
 					<div class="reviews__person">
 						<img class="reviews__avatar" src="../../img/avatar/ivanovS.png" alt="Иванов Сергей">
 						<span class="reviews__name">
@@ -62,7 +61,7 @@
 					</div>
 				</li>
 
-				<li class="swiper-reviews__slide swiper-slide">
+				<li class="swiper-reviews__slide">
 					<div class="reviews__person">
 						<img class="reviews__avatar" src="../../img/avatar/avatar.png" alt="Аватар">
 						<span class="reviews__name">
@@ -86,7 +85,7 @@
 					</div>
 				</li>
 
-				<li class="swiper-reviews__slide swiper-slide">
+				<li class="swiper-reviews__slide">
 					<div class="reviews__person">
 						<img class="reviews__avatar" src="../../img/avatar/spangebob.png" alt="Губка Боб">
 						<span class="reviews__name">
@@ -106,7 +105,7 @@
 					</div>
 				</li>
 
-				<li class="swiper-reviews__slide swiper-slide">
+				<li class="swiper-reviews__slide">
 					<div class="reviews__person">
 						<img class="reviews__avatar" src="../../img/avatar/HomerSimpson.png" alt="Гомер Симпсон">
 						<span class="reviews__name">
@@ -130,7 +129,7 @@
 					</div>
 				</li>
 
-				<li class="swiper-reviews__slide swiper-slide">
+				<li class="swiper-reviews__slide">
 					<div class="reviews__person">
 						<div class="reviews__avatar">
 							<img class="reviews__img" src="../../img/avatar/DartVaider.png" alt="Дарт Вейдер">
@@ -165,8 +164,16 @@
 		</div>
 
 		<div class="swiper-reviews__box">
-			<div class="swiper-reviews__prev"></div>
-			<div class="swiper-reviews__next"></div>
+			<div class="swiper-reviews__arrow swiper-reviews__arrow--prev">
+				<svg class="swiper-reviews__icon">
+					<use xlink:href="img/sprite.svg#p-left"></use>
+				</svg>
+			</div>
+			<div class=" swiper-reviews__arrow swiper-reviews__arrow--next">
+				<svg class="swiper-reviews__icon">
+					<use xlink:href="img/sprite.svg#p-right"></use>
+				</svg>
+			</div>
 		</div>
 
 		<div class="swiper-reviews__pagination"></div>

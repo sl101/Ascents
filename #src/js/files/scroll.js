@@ -103,9 +103,9 @@ if(menuLinks.length > 0){
 
 				if(burger.classList.contains('_active')){
 					burger_close(); 
-				document.body.classList.remove('_lock');
-				burger.classList.remove('_active');
-				menu.classList.remove('_active');
+				// document.body.classList.remove('_lock');
+				// burger.classList.remove('_active');
+				// menu.classList.remove('_active');
 				}
 
 				window.scrollTo({

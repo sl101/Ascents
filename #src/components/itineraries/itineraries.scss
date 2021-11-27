@@ -114,11 +114,11 @@
 	max-width: 1340px;
 	text-align: center;
 	height: 825px;
-	padding: 20px;
+	padding: 20px 20px 30px;
 	margin: 0 auto 28px;
 
 	@include xl {
-		padding: 20px 0;
+		padding: 20px 0 30px;
 	}
 
 	@include lg {
@@ -156,10 +156,26 @@
 		height: 10px;
 		border-radius: 5px;
 		position: relative;
-		background-color: $white;
+		background-color: $white-100;
+		cursor: pointer;
+		transition: all $hoverTime ease;
+
+		&:not(:last-child) {
+			margin: 0 10px 0 0;
+		}
 
 		@include lg {
 			bottom: 24px;
 		}
+
+		@include md-min {
+			&:hover {
+				background-color: $teal-100;
+			}
+		}
+	}
+
+	& .swiper-pagination-bullet-active {
+		background-color: $white;
 	}
 }

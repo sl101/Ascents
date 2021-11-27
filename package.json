@@ -31,10 +31,9 @@
 		"gulp-webpcss": "latest",
 		"imagemin-webp": "latest",
 		"sass": "latest",
+		"swiper": "^7.2.0",
 		"transform-runtime": "0.0.0",
 		"webp-converter": "2.2.3"
 	},
-	"dependencies": {
-		"swiper": "^7.2.0"
-	}
+	"dependencies": {}
 }
