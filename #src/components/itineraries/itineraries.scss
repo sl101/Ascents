@@ -149,6 +149,11 @@
 
 .itineraries-pagination {
 	position: relative;
+	display: none;
+
+	@include xl {
+		display: inline-block;
+	}
 
 	& .swiper-pagination-bullet {
 		display: inline-block;

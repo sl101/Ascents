@@ -22,7 +22,7 @@
 		touchAngel: 45,
 		toucRatio: 1,
 		initialSlide: 0,
-		// autoplay: true,
+		autoplay: true,
 
 		scrollbar: {
 			el: '.swiper-scrollbar',
@@ -63,13 +63,13 @@
 		spaceBetween: 10,
 		slidesPerView: 1.05,
 		paginationClickable: true,
-		watchOverflow: false,
 
 		pagination: {
 			el: '.itineraries-pagination',
 			clickable: true,
 			type: 'bullets',
 		},
+		
 
 		breakpoints: {
 			320: {
@@ -100,9 +100,6 @@
 		initialSlide: 0,
 		speed: 900,
 		loop: true,
-		// autoHeight: true,
-		// grabCursor:true,
-		// spaceBetween: 10,
 
 		pagination: {
 			el: '.swiper-reviews__pagination',
